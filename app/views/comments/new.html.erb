@@ -1,0 +1,11 @@
+<h1>New Comments</h1>
+
+<%= form_for @comments do |f| %>
+  <%= f.label :body %>
+  <%= f.text_field :body %>
+  <%= f.hidden_field :post_id, value: params[:post_id].to_i %>
+  <%= f.submit %>
+<% end %>
+
+
+<p>Find me in app/views/comments/new.html.erb</p>

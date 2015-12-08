@@ -1,0 +1,17 @@
+<h1>Comments</h1>
+
+<% if @comments.any? %>
+
+  <% @comments.each do |comment| %>
+    <ul>
+      <li><%= comment.body %></li>
+
+      <hr />
+    </ul>
+  <% end %>
+<% else %>
+<h3> No posts found </h3>
+<% end %>
+<p><%= link_to 'New Comment', new_comment_path %></p>
+
+<p>Find me in app/views/comments/index.html.erb</p>

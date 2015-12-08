@@ -1,0 +1,18 @@
+<h1>Posts#show</h1>
+<%= link_to 'Back', users_path %>
+<h3 class='red'><%= @post.body %></h3>
+<hr />
+<% if @comments.any? %>
+  <% @comments.each do |comment| %>
+    <ul>
+      <h4 class='green'><%= comment.body %></h4>
+
+      <%= link_to 'Edit comment', edit_comment_path(comment) %>
+      <%= link_to 'Destroy comment', comment_path(comment), method: :delete %>
+    </ul>
+  <% end %>
+<% else %>
+<h3 class='green'> No comments found </h3>
+<% end %>
+<p class='black-text'><%= link_to 'New comment', new_comment_path(post_id: @post.id) %></p>
+<p>Find me in app/views/posts/show.html.erb</p>

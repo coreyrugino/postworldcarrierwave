@@ -1,0 +1,19 @@
+<h1>Your Post</h1>
+
+
+<% if @posts.any? %>
+
+  <% @posts.each do |post| %>
+    <ul>
+      <li><%= post.body %></li>
+
+      <hr />
+    </ul>
+  <% end %>
+<% else %>
+<h3> No posts found </h3>
+<% end %>
+<p><%= link_to 'New Post', new_post_path %></p>
+
+
+<p>Find me in app/views/posts/index.html.erb</p>
