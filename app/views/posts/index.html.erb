@@ -4,9 +4,17 @@
 <% if @posts.any? %>
 
   <% @posts.each do |post| %>
+
+
     <ul>
       <li><%= post.body %></li>
-
+      <li><%= post.body %></li>
+      <hr />
+      <br />
+      <li><%= image_tag @post.images[1].url %></li>
+      <%= image_tag user.avatar.url(:thumb) %>
+      <!-- <% @post.images.each do |image| %>
+        <%= image_tag(image.url) %> -->
       <hr />
     </ul>
   <% end %>

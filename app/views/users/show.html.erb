@@ -3,6 +3,9 @@
   <% @posts.each do |post| %>
     <ul>
       <h3 class='red'><%= post.body %></h3>
+      <% post.images.each do |i| %>
+        <%= image_tag i %>
+      <% end %>
       <%= link_to "Show post's comments", post_path(post) %> |
       <%= link_to 'Edit post', edit_post_path(post) %> |
       <%= link_to 'Destroy post', post_path(post), method: :delete %>
