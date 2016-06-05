@@ -1,11 +1,22 @@
 <h1><%= @user.name %>'s Posts</h1>
+<%= image_tag @user.avatar.url(:thumb) %>
 <% if @posts.any? %>
+
   <% @posts.each do |post| %>
     <ul>
       <h3 class='red'><%= post.body %></h3>
-      <% post.images.each do |i| %>
-        <%= image_tag i %>
+      <% if post.images.any? %>
+        <!-- <%= image_tag post.images[1].url(:thumb).to_s %> -->
+        <% if post.images.any? %>
+          <% post.images.each do |i| %>
+            <%= image_tag i.url(:thumb).to_s %>
+          <% end %>
+        <% end %>
+      <% elsif %>
+        <h4> no images </h4>
       <% end %>
+
+
       <%= link_to "Show post's comments", post_path(post) %> |
       <%= link_to 'Edit post', edit_post_path(post) %> |
       <%= link_to 'Destroy post', post_path(post), method: :delete %>

@@ -26,6 +26,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "rmagick"
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'materialize-sass'
+gem 'awesome_print', require: 'ap'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

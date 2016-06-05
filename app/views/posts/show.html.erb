@@ -1,10 +1,15 @@
 <h1>Posts#show</h1>
 <%= link_to 'Back', users_path %>
 <h3 class='red'><%= @post.body %></h3>
-<% @post.images.each do |i| %>
+<!-- <% @post.images.each do |i| %>
   <%= image_tag i %>
-<% end %>
+<% end %> -->
 <hr />
+<% if @post.images.any? %>
+  <% @post.images.each do |i| %>
+    <%= image_tag i.url(:thumb).to_s %>
+  <% end %>
+<% end %>
 <% if @comments.any? %>
   <% @comments.each do |comment| %>
     <ul>

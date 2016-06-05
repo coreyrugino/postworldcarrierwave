@@ -1,7 +1,21 @@
 <h1>Edit post</h1>
-<%= form_for @post do |f| %>
+<%= form_for @post, html: { multipart: true } do |f| %>
   <%= f.label :body %>:
   <%= f.text_field :body %>
+  <div class='center'>
+    <%= f.file_field :images, multiple: true %>
+  </div>
+  <% if @post.images.any? %>
+    <% @post.images.each do |i| %>
+      <%= image_tag i.url(:thumb) %>
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %>
+      <hr />
+    <% end %>
+    <hr />
+  <% elsif %>
+    <h4> please add a picture </h4>
+  <% end %>
 
   <%= f.submit %>
 <% end %>

@@ -1,0 +1,4 @@
+<%= image_tag @post.images[0] %>
+<%= image_tag @post.images[0].url(:showSmall) %>
+
+.url(:showSmall)
